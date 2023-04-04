@@ -1,2 +1,2 @@
 # TodyNet
- TodyNet: Temporal Dynamic Graph Neural Network for Multivariate Time Series Classification
+ The code is coming soon!!!
