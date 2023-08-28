@@ -197,8 +197,9 @@ class DenseGINConv2d(nn.Module):
         # DYNAMIC
         x_pre = x[:, :, :-1, ...]
         
-        out = x[:, :, 1:, ...] + x_pre
-        out = torch.cat( [x[:, :, 0, ...].unsqueeze(2), out], dim=2 )
+        # out = x[:, :, 1:, ...] + x_pre
+        out[:, :, 1:, ...] = out[:, :, 1:, ...] + x_pre
+        # out = torch.cat( [x[:, :, 0, ...].unsqueeze(2), out], dim=2 )
         
         if add_loop:
             out = (1 + self.eps) * x + out
